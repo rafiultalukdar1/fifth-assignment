@@ -25,6 +25,7 @@
         .container {
             padding: 0 15px;
             margin: 0 auto;
+            max-width: 1780px;
         }
         .inter-font {
             font-family: "Inter", sans-serif;
@@ -47,7 +48,7 @@
                     <div>
                         <ul class="flex items-center md:gap-[20px] gap-[8px] flex-wrap">
                             <li class="flex items-center gap-[10px] rounded-[50px] bg-[#ECFFF0] md:py-[12px] md:px-[35px] py-[10px] px-[25px] text-[#000] text-[16px] font-[900] inter-font"><span id="heart-count">0</span><img class="max-w-[30px]" src="images/heart.png" alt=""></li>
-                            <li class="flex items-center gap-[10px] rounded-[50px] bg-[#ECFFF0] md:py-[12px] md:px-[35px] py-[10px] px-[25px] text-[#000] text-[16px] font-[900] inter-font"><span>100</span><img class="max-w-[24px]" src="images/coin.png" alt=""></li>
+                            <li class="flex items-center gap-[10px] rounded-[50px] bg-[#ECFFF0] md:py-[12px] md:px-[35px] py-[10px] px-[25px] text-[#000] text-[16px] font-[900] inter-font"><span id="coin-amount">100</span><img class="max-w-[24px]" src="images/coin.png" alt=""></li>
                             <li class="flex items-center gap-[5px] rounded-[50px] bg-[#00A63E] md:py-[14px] md:px-[35px] py-[10px] px-[25px] text-[#fff] text-[16px] font-[600] inter-font"><span id="copy-button">0</span>Copy</li>
                         </ul>
                     </div>
@@ -71,9 +72,28 @@
         <!-- Calls section Here -->
         <section class="bg-[#F5FFF6] pt-[48px] pb-[86px]">
             <div class="container">
-                <div class="grid grid-cols-12 gap-[30px]">
-                    <div class="col-span-9">
-                        <div id="card-items" class="grid grid-cols-3 gap-[30px]">
+                <div class="xl:grid grid-cols-12 gap-[30px]">
+                    <!-- call history -->
+                    <div class="col-span-3 xl:order-2">
+                        <div id="call-history" class="call-history p-[24px] bg-[#fff] shadow-[0_2px_3px_0_rgba(0,0,0,0.15)] rounded-[12px] h-[100%]">
+                            <div class="flex justify-between items-center mb-[20px]">
+                                <div>
+                                    <h6 class="text-[#111] text-[20px] font-[500] roboto-font"><i class="fa-regular fa-clock text-[#5C5C5C] mr-[5px]"></i>Call History</h6>
+                                </div>
+                                <div>
+                                    <button id="clearBtn" class="rounded-[50px] bg-[#00A63E] py-[12px] px-[32px] text-[#fff] text-[16px] font-[600] inter-font cursor-pointer hover:bg-[#007A3D] duration-300">Clear</button>
+                                </div>
+                            </div>
+                            <!-- upadate items -->
+                             <div id="collect-data" class="flex flex-col gap-y-[8px]">
+                             </div>
+                        </div>
+                    </div>
+                    <!-- call history -->
+
+                    <!-- card items -->
+                    <div class="col-span-9 xl:order-1  mt-[30px] xl:mt-0">
+                        <div id="card-items" class="grid xl:grid-cols-3 lg:grid-cols-2 gap-[30px]">
                             <div class="card-box p-[32px] rounded-[12px] bg-[#fff] shadow-[0_2px_3px_0_rgba(0,0,0,0.15)]">
                                 <div class="flex justify-between items-center">
                                     <div class="max-w-[60px] p-[14px] bg-[#FFE3E2] rounded-[16px]">
@@ -93,10 +113,10 @@
                                 </div>
                                 <div class="grid grid-cols-2 gap-[8px]">
                                     <div>
-                                        <button class="copy-btn py-[10px] rounded-[8px] border border-[#D4D6D5] bg-[#FFF] w-[100%] text-[#5C5C5C] text-[16px] roboto-font cursor-pointer"><i class="fa-regular fa-copy pr-[8px]"></i>Copy</button>
+                                        <button class="copy-btn py-[10px] rounded-[8px] border border-[#D4D6D5] bg-[#FFF] w-[100%] text-[#5C5C5C] text-[16px] roboto-font cursor-pointer hover:bg-[#F0F0F0] hover:text-[#333333] duration-300"><i class="fa-regular fa-copy pr-[8px]"></i>Copy</button>
                                     </div>
                                     <div>
-                                        <button class="py-[10px] rounded-[8px] bg-[#00A63E] w-[100%] text-[16px] text-[#FFF] roboto-font cursor-pointer"><i class="fa-solid fa-phone pr-[8px]"></i>Call</button>
+                                        <button class="call-btn py-[10px] rounded-[8px] bg-[#00A63E] w-[100%] text-[16px] text-[#FFF] roboto-font cursor-pointer hover:bg-[#007A3D] duration-300"><i class="fa-solid fa-phone pr-[8px]"></i>Call</button>
                                     </div>
                                 </div>
                             </div>
@@ -119,10 +139,10 @@
                                 </div>
                                 <div class="grid grid-cols-2 gap-[8px]">
                                     <div>
-                                        <button class="copy-btn py-[10px] rounded-[8px] border border-[#D4D6D5] bg-[#FFF] w-[100%] text-[#5C5C5C] text-[16px] roboto-font cursor-pointer"><i class="fa-regular fa-copy pr-[8px]"></i>Copy</button>
+                                        <button class="copy-btn py-[10px] rounded-[8px] border border-[#D4D6D5] bg-[#FFF] w-[100%] text-[#5C5C5C] text-[16px] roboto-font cursor-pointer hover:bg-[#F0F0F0] hover:text-[#333333] duration-300"><i class="fa-regular fa-copy pr-[8px]"></i>Copy</button>
                                     </div>
                                     <div>
-                                        <button class="py-[10px] rounded-[8px] bg-[#00A63E] w-[100%] text-[16px] text-[#FFF] roboto-font cursor-pointer"><i class="fa-solid fa-phone pr-[8px]"></i>Call</button>
+                                        <button class="call-btn py-[10px] rounded-[8px] bg-[#00A63E] w-[100%] text-[16px] text-[#FFF] roboto-font cursor-pointer hover:bg-[#007A3D] duration-300"><i class="fa-solid fa-phone pr-[8px]"></i>Call</button>
                                     </div>
                                 </div>
                             </div>
@@ -145,10 +165,10 @@
                                 </div>
                                 <div class="grid grid-cols-2 gap-[8px]">
                                     <div>
-                                        <button class="copy-btn py-[10px] rounded-[8px] border border-[#D4D6D5] bg-[#FFF] w-[100%] text-[#5C5C5C] text-[16px] roboto-font cursor-pointer"><i class="fa-regular fa-copy pr-[8px]"></i>Copy</button>
+                                        <button class="copy-btn py-[10px] rounded-[8px] border border-[#D4D6D5] bg-[#FFF] w-[100%] text-[#5C5C5C] text-[16px] roboto-font cursor-pointer hover:bg-[#F0F0F0] hover:text-[#333333] duration-300"><i class="fa-regular fa-copy pr-[8px]"></i>Copy</button>
                                     </div>
                                     <div>
-                                        <button class="py-[10px] rounded-[8px] bg-[#00A63E] w-[100%] text-[16px] text-[#FFF] roboto-font cursor-pointer"><i class="fa-solid fa-phone pr-[8px]"></i>Call</button>
+                                        <button class="call-btn py-[10px] rounded-[8px] bg-[#00A63E] w-[100%] text-[16px] text-[#FFF] roboto-font cursor-pointer hover:bg-[#007A3D] duration-300"><i class="fa-solid fa-phone pr-[8px]"></i>Call</button>
                                     </div>
                                 </div>
                             </div>
@@ -171,33 +191,20 @@
                                 </div>
                                 <div class="grid grid-cols-2 gap-[8px]">
                                     <div>
-                                        <button class="copy-btn py-[10px] rounded-[8px] border border-[#D4D6D5] bg-[#FFF] w-[100%] text-[#5C5C5C] text-[16px] roboto-font cursor-pointer"><i class="fa-regular fa-copy pr-[8px]"></i>Copy</button>
+                                        <button class="copy-btn py-[10px] rounded-[8px] border border-[#D4D6D5] bg-[#FFF] w-[100%] text-[#5C5C5C] text-[16px] roboto-font cursor-pointer hover:bg-[#F0F0F0] hover:text-[#333333] duration-300"><i class="fa-regular fa-copy pr-[8px]"></i>Copy</button>
                                     </div>
                                     <div>
-                                        <button class="py-[10px] rounded-[8px] bg-[#00A63E] w-[100%] text-[16px] text-[#FFF] roboto-font cursor-pointer"><i class="fa-solid fa-phone pr-[8px]"></i>Call</button>
+                                        <button class="call-btn py-[10px] rounded-[8px] bg-[#00A63E] w-[100%] text-[16px] text-[#FFF] roboto-font cursor-pointer hover:bg-[#007A3D] duration-300"><i class="fa-solid fa-phone pr-[8px]"></i>Call</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <!-- card items -->
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-                    <div class="col-span-3">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste eius molestiae ipsum quibusdam repudiandae nemo minima ducimus alias at labore explicabo molestias facere cupiditate, perspiciatis in nostrum, dicta magni. Architecto!
-                    </div>
+                
                 </div>
             </div>
         </section>
